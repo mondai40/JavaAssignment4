@@ -71,16 +71,20 @@ public class Student {
 		} else {
 			String gender = "Mr./Ms. ";
 		}
+		String studentName = this.getProfile().getAddress();
 		
+		System.out.println("Dear Sir/Madam,");
+		System.out.println("");
+		System.out.println("This is to certify that "+ gender + studentName +" with student id " + studentID +" is a student at semester "+ semesterNumber+" at CICCC. ");
+		System.out.println("He was admitted to our college in " + this.admissionYear + " and has taken 1 course(s) so far. Currently he resides at " + studentAddress+ ".");
+		System.out.println("");
+		System.out.println("If you have any question, please donâ€™t hesitate to contact us.");
+		System.out.println("Thanks,");
+//		System.out.println("[Managerâ€™s name: ??? ],");
+		System.out.println("");
+	}
+	public void printMyCourses() {
 		
-		
-		System.out.println("Dear Sir/Madam,\n" + 
-				"This is to certify that " + gender +   with student id 7813007 is a student at semester 1 at CICCC.\r\n" + 
-				"He was admitted to our college in 2011 and has taken 1 course(s) so far. Currently he resides at 850\r\n" + 
-				"West Vancouver, Vancouver.\r\n" + 
-				"If you have any question, please don’t hesitate to contact us.\r\n" + 
-				"Thanks,\r\n" + 
-				"[Manager’s name: ??? ],");
 	}
 	
 }
