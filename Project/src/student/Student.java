@@ -4,6 +4,8 @@ import semesterTranscript.*;
 import profile.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 public class Student {
 	private static ArrayList<Student> allStudents;
@@ -64,19 +66,24 @@ public class Student {
 	public void printEnrollmentCertificate() {
 		String studentName = this.getProfile().getName();
 		char genderSyn = this.getProfile().getGender();
-		if ( genderSyn == "M") {
+		String genderSynString = Character.toString(genderSyn);
+		if ( genderSynString == "M") {
 			String gender = "Mr. ";
-		} else if ( genderSyn == "F") {
+		} else if ( genderSynString == "F") {
 			String gender = "Ms. ";
 		} else {
 			String gender = "Mr./Ms. ";
 		}
-		String studentName = this.getProfile().getAddress();
+		int studentId = this.getProfile().getStudentId();
+		String studentAddress = this.getProfile().getAddress();
+		int semesterNumber = this.getProfile().getSemesterNumber();
+		int takenCourses = this.generalTranscript.getTakenCourses();
+		
 		
 		System.out.println("Dear Sir/Madam,");
 		System.out.println("");
-		System.out.println("This is to certify that "+ gender + studentName +" with student id " + studentID +" is a student at semester "+ semesterNumber+" at CICCC. ");
-		System.out.println("He was admitted to our college in " + this.admissionYear + " and has taken 1 course(s) so far. Currently he resides at " + studentAddress+ ".");
+		System.out.println("This is to certify that "+ gender + studentName +" with student id " + studentId +" is a student at semester "+ semesterNumber+" at CICCC. ");
+		System.out.println("He was admitted to our college in " + this.admissionYear + " and has taken " + takenCourses + " course(s) so far. Currently he resides at " + studentAddress+ ".");
 		System.out.println("");
 		System.out.println("If you have any question, please don’t hesitate to contact us.");
 		System.out.println("Thanks,");
@@ -84,7 +91,23 @@ public class Student {
 		System.out.println("");
 	}
 	public void printMyCourses() {
-		
+		ArrayList<Course> takenCourses = this.generalTranscript.getCourseList();
+		HashMap<Course, Integer> courseInTakeSemester = this.generalTranscript.getCourseIntakeSemester();
+		Iterator<Course> it = takenCourses.iterator();
+		int i = 1;
+		while (it.hasNext()) {
+			Course course = it.next();
+			String courseName = course.getCourseName();
+			String courseCode = course.getCourseCode();
+			int numberOfSemester = courseInTakeSemester.get(course);
+			if (numberOfSemester != 0 && numberOfSemester == 2019) {
+				String annotation = "[Current semester]";
+			} else {
+				String annotaion = "";
+			}
+			System.out.println(i + ") " + courseCode + ": " + courseName + " " + annotation);
+			i++;
+		}
 	}
 	
 }
