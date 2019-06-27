@@ -2,10 +2,13 @@ package student;
 import generalTranscript.*;
 import semesterTranscript.*;
 import profile.*;
+import course.*;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+
 
 public class Student {
 	private static ArrayList<Student> allStudents;
@@ -100,10 +103,11 @@ public class Student {
 			String courseName = course.getCourseName();
 			String courseCode = course.getCourseCode();
 			int numberOfSemester = courseInTakeSemester.get(course);
+			String annotation=" ";
 			if (numberOfSemester != 0 && numberOfSemester == 2019) {
-				String annotation = "[Current semester]";
+				annotation = "[Current semester]";
 			} else {
-				String annotaion = "";
+				annotation = "";
 			}
 			System.out.println(i + ") " + courseCode + ": " + courseName + " " + annotation);
 			i++;
