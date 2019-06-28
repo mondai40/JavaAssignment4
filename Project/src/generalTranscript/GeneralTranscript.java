@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import course.Course;
 import semesterTranscript.SemesterTranscript;
+import student.Student;
 
 public class GeneralTranscript {
 	public GeneralTranscript() {
@@ -28,6 +29,11 @@ public class GeneralTranscript {
 	}
 
 	public HashMap<Course, Float> getCourseGradeMap() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getMyGPARanking(Student student) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -59,6 +59,15 @@ public class Profile {
 		
 		return name;
 	}
+	
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+
+
 
 	public int getStudentId() {
 		// TODO Auto-generated method stub

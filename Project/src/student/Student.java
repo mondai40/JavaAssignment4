@@ -67,7 +67,7 @@ public class Student {
 		}
 	}
 	public void printEnrollmentCertificate() {
-		String studentName = this.getProfile().getName();
+		String studentName = this.getProfile().getName()+" "+this.profile.getLastName();
 		char genderSyn = this.getProfile().getGender();
 		String genderSynString = Character.toString(genderSyn);
 		String gender=" ";
@@ -160,7 +160,7 @@ public class Student {
 		}
 	}
 	public void printGPA() {
-		String studentName = this.getProfile().getName();
+		String studentName = this.getProfile().getName()+" "+this.profile.getLastName();
 		char genderSyn = this.getProfile().getGender();
 		String genderSynString = Character.toString(genderSyn);
 		String gender=" ";
@@ -176,5 +176,20 @@ public class Student {
 		System.out.println("Your current semester's GPA is "+this.profile.getCurrentSemesterGPA());
 	}
 	
+	public void printMyRanking() {
+		String studentName = this.getProfile().getName()+" "+this.profile.getLastName();
+		char genderSyn = this.getProfile().getGender();
+		String genderSynString = Character.toString(genderSyn);
+		String gender=" ";
+		if ( genderSynString == "M") {
+			gender = "Mr. ";
+		} else if ( genderSynString == "F") {
+			gender = "Ms. ";
+		} else {
+			gender = "Mr./Ms. ";
+	}
+		System.out.println("Hi "+gender+studentName+",");
+		System.out.println("Your overall GPA is"+this.profile.getGpa()+"and therefore your rank is "+this.generalTranscript.getMyGPARanking(this)+".");
+	}
 }
 		
