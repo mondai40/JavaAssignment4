@@ -27,6 +27,11 @@ public class GeneralTranscript {
 		return null;
 	}
 
+	public HashMap<Course, Float> getCourseGradeMap() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 }

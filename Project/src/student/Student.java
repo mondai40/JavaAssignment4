@@ -70,17 +70,18 @@ public class Student {
 		String studentName = this.getProfile().getName();
 		char genderSyn = this.getProfile().getGender();
 		String genderSynString = Character.toString(genderSyn);
+		String gender=" ";
 		if ( genderSynString == "M") {
-			String gender = "Mr. ";
+			gender = "Mr. ";
 		} else if ( genderSynString == "F") {
-			String gender = "Ms. ";
+			gender = "Ms. ";
 		} else {
-			String gender = "Mr./Ms. ";
+			gender = "Mr./Ms. ";
 		}
 		int studentId = this.getProfile().getStudentId();
 		String studentAddress = this.getProfile().getAddress();
-		int semesterNumber = this.getProfile().getSemesterNumber();
-		int takenCourses = this.generalTranscript.getTakenCourses();
+		int semesterNumber = (this.profile.getCurrentYear()-this.profile.getAdmissionYear())*2;
+		int takenCourses = this.generalTranscript.getCourseList().size();
 		
 		
 		System.out.println("Dear Sir/Madam,");
@@ -93,6 +94,51 @@ public class Student {
 //		System.out.println("[Manager’s name: ??? ],");
 		System.out.println("");
 	}
+	public void printGeneralTranscript() {
+		ArrayList<Course> takenCourses = this.generalTranscript.getCourseList();
+		HashMap<Course, Integer> courseInTakeSemester = this.generalTranscript.getCourseIntakeSemester();
+		HashMap<Course, Float> courseGradesMap = this.generalTranscript.getCourseGradeMap();
+		Iterator<Course> it = takenCourses.iterator();
+		int i = 1;
+		while (it.hasNext()) {
+			Course course = it.next();
+			String courseName = course.getCourseName();
+			String courseCode = course.getCourseCode();
+			int numberOfSemester = courseInTakeSemester.get(course);
+			float courseGrade=courseGradesMap.get(course);
+			String annotation=" ";
+			if (numberOfSemester != 0 && numberOfSemester == 2019) {
+				annotation = "[Current semester]";
+			} else {
+				annotation = "";
+			}
+			System.out.println(i + ") " + courseCode + ": " + courseName + ": " + courseGrade+ annotation);
+			i++;
+		}
+		System.out.println("YOUR GPA IS: "+this.profile.getGpa());
+		System.out.println("Here is your current semester transcript:");
+		i=1;
+		double currentGPA=this.profile.getCurrentSemesterGPA();
+		while (it.hasNext()) {
+			
+				Course course = it.next();
+				String courseName = course.getCourseName();
+				String courseCode = course.getCourseCode();
+				int numberOfSemester = courseInTakeSemester.get(course);
+				float courseGrade=courseGradesMap.get(course);
+				String annotation=" ";
+				
+				if (numberOfSemester != 0 && numberOfSemester == 2019) {
+					annotation = "[Current semester]";
+					System.out.println(i + ") " + courseCode + ": " + courseName + ": " + courseGrade+ annotation);
+				i++;
+				} 
+				
+			}
+		System.out.println("YOUR Current Semester GPA is: "+currentGPA);
+		}
+		
+	
 	public void printMyCourses() {
 		ArrayList<Course> takenCourses = this.generalTranscript.getCourseList();
 		HashMap<Course, Integer> courseInTakeSemester = this.generalTranscript.getCourseIntakeSemester();

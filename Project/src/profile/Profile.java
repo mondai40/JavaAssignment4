@@ -13,6 +13,7 @@ public class Profile {
 	private String country;
 	private char gender;
 	private double gpa;
+	private double currentSemesterGPA;
 	private String studentId;
 	
 	
@@ -34,6 +35,7 @@ public class Profile {
 		this.age=s.nextInt();
 		this.currentYear=-1;
 		this.gpa=-1.0;
+		this.currentSemesterGPA=-1.0;
 		this.studentId="-1";
 		
 	
@@ -77,6 +79,30 @@ public class Profile {
 
 
 
+	public double getGpa() {
+		return gpa;
+	}
+
+
+
+
+
+	public double getCurrentSemesterGPA() {
+		return currentSemesterGPA;
+	}
+
+
+
+
+
+	public void setCurrentSemesterGPA(double currentSemesterGPA) {
+		this.currentSemesterGPA = currentSemesterGPA;
+	}
+
+
+
+
+
 	public void setGpa(double gpa) {
 		this.gpa = gpa;
 	}
@@ -87,6 +113,14 @@ public class Profile {
 
 	public void setStudentId(String studentId) {
 		this.studentId = studentId;
+	}
+
+
+
+
+
+	public String getAddress() {
+		return address;
 	}
 
 
