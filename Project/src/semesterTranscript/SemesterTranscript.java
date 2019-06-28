@@ -1,5 +1,7 @@
 package semesterTranscript;
 
-public class SemesterTranscript {
+import generalTranscript.*;
+
+public class SemesterTranscript extends GeneralTranscript {
 
 }
