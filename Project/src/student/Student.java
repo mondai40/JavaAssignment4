@@ -159,6 +159,22 @@ public class Student {
 			i++;
 		}
 	}
+	public void printGPA() {
+		String studentName = this.getProfile().getName();
+		char genderSyn = this.getProfile().getGender();
+		String genderSynString = Character.toString(genderSyn);
+		String gender=" ";
+		if ( genderSynString == "M") {
+			gender = "Mr. ";
+		} else if ( genderSynString == "F") {
+			gender = "Ms. ";
+		} else {
+			gender = "Mr./Ms. ";
+		}
+		System.out.println("Hi "+gender+studentName+",");
+		System.out.println("Your overall GPA is "+this.profile.getGpa());
+		System.out.println("Your current semester's GPA is "+this.profile.getCurrentSemesterGPA());
+	}
 	
 }
 		
