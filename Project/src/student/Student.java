@@ -191,5 +191,31 @@ public class Student {
 		System.out.println("Hi "+gender+studentName+",");
 		System.out.println("Your overall GPA is"+this.profile.getGpa()+"and therefore your rank is "+this.generalTranscript.getMyGPARanking(this)+".");
 	}
+	
+	public void printAvailableCourses() {
+		ArrayList<Course> allCourses = Course.getAllCourses();
+//		ArrayList<Course> takenCourses = this.generalTranscript.getCourseList();
+		HashMap<Course, Integer> courseInTakeSemester = this.generalTranscript.getCourseIntakeSemester();
+		Iterator<Course> it = allCourses.iterator();
+//		Iterator<Course> it2 = takenCourses.iterator();
+		
+		int i = 1;
+		while (it.hasNext()) {
+			Course course = it.next();
+			String courseName = course.getCourseName();
+			String courseCode = course.getCourseCode();
+			int courseUnit = course.getCourseUnit();
+			int numberOfSemester = courseInTakeSemester.get(course);
+			String annotation=" ";
+			if (numberOfSemester == 0) {
+				annotation = "[Not taken]";
+			} else {
+				annotation = "[Taken at semester " + numberOfSemester + "]";
+			}
+			System.out.println(i + ") " + courseCode + ": " + courseName + " " + courseUnit + " units " + annotation);
+			i++;
+			
+		}
+	}
 }
 		
