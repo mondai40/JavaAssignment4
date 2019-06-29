@@ -12,25 +12,33 @@ public class GeneralTranscript {
 	
 	HashMap<Course, Integer> courseIntakeSemester;
 	ArrayList<Course> courseList;
-	HashMap<Course, Float> takenCoursesGradeMap;
+	HashMap<Course, Float> coursesGradeMap;
 	static HashMap<Student,Float> allStudentsGpaMap=new HashMap<Student,Float>();
 	
 	public GeneralTranscript() {
 		super();
 		this.courseIntakeSemester=new HashMap<Course, Integer>();
 		this.courseList=new ArrayList<Course>();
-		this.takenCoursesGradeMap=new HashMap<Course, Float>();
+		this.coursesGradeMap=new HashMap<Course, Float>();
 		
 	}
 	
 	public void inputCourseInfo(Course course, float courseGrade,int courseIntakeSemester) {
 		this.courseList.add(course);
-		if(courseGrade>0) {
-				this.takenCoursesGradeMap.put(course, courseGrade);
+		//if(courseGrade>0) {
+				this.coursesGradeMap.put(course, courseGrade);
+		//}
+		this.courseIntakeSemester.put(course, courseIntakeSemester);		
+	}
+	public float calculateGPA() {
+		float sumOfGrades=0;
+		Iterator<Course> it=this.courseList.iterator();
+		while(it.hasNext()) {
+			Course course=it.next();
+			sumOfGrades=sumOfGrades+this.coursesGradeMap.get(course);
 		}
-		this.courseIntakeSemester.put(course, courseIntakeSemester);
 		
-			
+		return (float) 10.00;
 	}
 
 //	public  void semesterTranscriptUpdater(Course courseName, Student student) {
@@ -50,7 +58,7 @@ public class GeneralTranscript {
 	}
 
 	public HashMap<Course, Float> getCourseGradeMap() {
-		return this.takenCoursesGradeMap;
+		return this.coursesGradeMap;
 	}
 
 	public String getMyGPARanking(Student student) {
