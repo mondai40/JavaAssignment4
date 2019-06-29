@@ -20,7 +20,7 @@ public class ApplicationDriver {
 		System.out.println("Password:");
 		String password=s.nextLine();
 		//Create hashMap just to see the availabe methods
-		HashMap<String,String> accountsAndPasswords=new HashMap<String,String>();
+		HashMap<String,String> accountsAndPasswords=account.getAccountsAndPasswords();
 		if (accountsAndPasswords.containsKey(username)&&accountsAndPasswords.get(username)==password) {
 			passLoginView=true;
 		}
