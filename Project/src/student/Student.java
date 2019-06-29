@@ -220,8 +220,6 @@ public class Student {
 	
 	public void printAllStrudens() {
 		int numberOfStudent = allStudents.size();
-		
-
 		System.out.println("There are " + numberOfStudent + " students in CICCC as following:");
 		
 		Iterator<Student> it = allStudents.iterator();
@@ -233,8 +231,37 @@ public class Student {
 			System.out.println(i + ") " + studentName + ": " + studentId);
 			i++;	
 		}
-		
 				
+	}
+	
+	public void printMyProfile() {
+		this.profile.getAllProfile();
+		
+		ArrayList<Course> takenCourses = this.generalTranscript.getCourseList();
+		HashMap<Course, Integer> courseInTakeSemester = this.generalTranscript.getCourseIntakeSemester();
+		Iterator<Course> it = takenCourses.iterator();
+		System.out.print("Courses Taken So far: ");
+		while (it.hasNext()) {
+			Course course = it.next();
+			String courseName = course.getCourseName();
+			String courseCode = course.getCourseCode();
+			int numberOfSemester = courseInTakeSemester.get(course);
+			String annotation=" ";
+			String comma = " ";
+			if (numberOfSemester != 0 && numberOfSemester == 2019) {
+				annotation = "[Current semester]";
+			} else {
+				annotation = "";
+			}
+			
+			if(it.hasNext()) {
+				comma = ",";
+			} else {
+				comma = "";
+			}
+			
+			System.out.print(courseCode + ": " + courseName + annotation + comma);
+		}
 	}
 	
 	
