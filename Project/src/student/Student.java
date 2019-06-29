@@ -217,5 +217,36 @@ public class Student {
 			
 		}
 	}
+	
+	public void printAllStrudens() {
+		int numberOfStudent = allStudents.size();
+		
+
+		System.out.println("There are " + numberOfStudent + " students in CICCC as following:");
+		
+		Iterator<Student> it = allStudents.iterator();
+		int i = 1;
+		while(it.hasNext()) {
+			Student student = it.next();
+			String studentName = student.getProfile().getName()+" "+student.profile.getLastName();
+			int studentId = student.getProfile().getStudentId(); 
+			System.out.println(i + ") " + studentName + ": " + studentId);
+			i++;	
+		}
+		
+				
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 		
