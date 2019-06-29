@@ -22,7 +22,7 @@ public class Student {
 		super();
 		this.generalTranscript=new GeneralTranscript();
 		this.profile=new Profile();
-		this.semesterTranscript=GeneralTranscript.semesterTranscriptCreator();
+		this.semesterTranscript=new SemesterTranscript();
 		this.currentYear=this.profile.getCurrentYear();
 		this.admissionYear=this.profile.getAdmissionYear();
 			
@@ -262,9 +262,15 @@ public class Student {
 			
 			System.out.print(courseCode + ": " + courseName + annotation + comma);
 		}
+		
 	}
 	
-	
+	public void registerCourseInfo(Course course, float grade, int courseIntakeSemester) {
+			this.generalTranscript.inputCourseInfo(course, grade, courseIntakeSemester);
+			if(courseIntakeSemester==2019) {				
+				this.semesterTranscript.inputCourseInfo(course, grade, courseIntakeSemester);
+			}
+		}
 	
 	
 	
