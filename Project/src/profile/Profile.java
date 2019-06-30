@@ -34,8 +34,8 @@ public class Profile {
 		System.out.println("Please Enter Your year of age");
 		this.age=s.nextInt();
 		this.currentYear=-1;
-		this.gpa=-1.0;
-		this.currentSemesterGPA=-1.0;
+		this.gpa=(float)-1.0;
+		this.currentSemesterGPA=(float)-1.0;
 		this.studentId="-1";
 		
 	
@@ -104,7 +104,7 @@ public class Profile {
 
 
 
-	public void setCurrentSemesterGPA(double currentSemesterGPA) {
+	public void setCurrentSemesterGPA(float currentSemesterGPA) {
 		this.currentSemesterGPA = currentSemesterGPA;
 	}
 
@@ -112,7 +112,7 @@ public class Profile {
 
 
 
-	public void setGpa(double gpa) {
+	public void setGpa(float gpa) {
 		this.gpa = gpa;
 	}
 
@@ -146,9 +146,7 @@ public class Profile {
 		System.out.println("Age: "+this.age);
 		System.out.println("Year of Admission: "+this.admissionYear);
 		System.out.println("Overall GPA: "+this.gpa);
-		//TODO
-		//An Student Class or mainDriver method that call this method has to call the courses list that is on generalTranscript File.		
-	}
+		}
 	
 	
 
