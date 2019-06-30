@@ -12,8 +12,8 @@ public class Profile {
 	private String address;
 	private String country;
 	private char gender;
-	private double gpa;
-	private double currentSemesterGPA;
+	private float gpa;
+	private float currentSemesterGPA;
 	private String studentId;
 	
 	

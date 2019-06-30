@@ -270,7 +270,15 @@ public class Student {
 			if(courseIntakeSemester==2019) {				
 				this.semesterTranscript.inputCourseInfo(course, grade, courseIntakeSemester);
 			}
-		}
+			this.gpaUpdater();
+	}
+	private void gpaUpdater() {
+		float generalGPA=this.generalTranscript.calculateGPA();
+		this.profile.setGpa(generalGPA);
+		float currentSemesterGPA=this.semesterTranscript.calculateGPA();
+		this.profile.setCurrentSemesterGPA(currentSemesterGPA);
+		
+	}
 	
 	
 	
