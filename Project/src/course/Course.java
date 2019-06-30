@@ -22,23 +22,19 @@ public class Course {
 	}
 	
 	public String getCourseName() {
-		// TODO Auto-generated method stub
 		return this.name;
 	}
 
 	public String getCourseCode() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.code;
 	}
 
 	public static ArrayList<Course> getAllCourses() {
-		// TODO Auto-generated method stub
 		return allCourses;
 	}
 
 	public int getCourseUnit() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.numberOfUnits;
 	}
 
 }
