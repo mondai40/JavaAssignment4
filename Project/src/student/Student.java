@@ -34,7 +34,17 @@ public class Student {
 			
 	}
 	
+	public Student(String name, String userName) {
+		super();
+		this.generalTranscript=new GeneralTranscript();
+		this.profile=new Profile(name);
+		this.account=new Account(this, userName);
+		this.semesterTranscript=new SemesterTranscript();
+		this.currentYear=this.profile.getCurrentYear();
+//		this.admissionYear=this.profile.getAdmissionYear();
+		allStudents.add(this);
 	
+	}
 	public static ArrayList<Student> getAllStudents() {
 		return allStudents;
 	}
@@ -63,7 +73,20 @@ public class Student {
 	public Profile getProfile() {
 		return profile;
 	}
+	
+	
 
+
+	public void setAdmissionYear(int admissionYear) {
+		this.admissionYear = admissionYear;
+		this.profile.setAdmissionYear(admissionYear);
+		
+	}
+
+//	public void setCurrentYear(int currentYear) {
+//		this.currentYear = currentYear;
+//		this.profile.setCurrentYear(currentYear);
+//	}
 
 	public static void showAllStudents() {
 		ArrayList<Student> slist=allStudents;

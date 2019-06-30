@@ -26,7 +26,11 @@ public class Account {
 		
 		
 	}
-
+	public Account(Student student,String userName) {
+		super();		
+		this.userName = userName;		
+		usernameStudentsMap.put(userName, student);
+	}
 	String getUserName() {
 		return userName;
 	}
@@ -38,6 +42,10 @@ public class Account {
 	public static HashMap<String, Student> getUsernameStudentsMap() {
 		return usernameStudentsMap;
 	}
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
+	}
+	
 	
 	
 }

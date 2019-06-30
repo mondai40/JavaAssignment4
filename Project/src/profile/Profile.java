@@ -44,6 +44,7 @@ public class Profile {
 	public Profile(String name) {
 		super();
 		this.name=name;
+		this.currentYear=2019;
 	}
 
 
