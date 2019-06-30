@@ -31,6 +31,7 @@ public class Student {
 		this.admissionYear=this.profile.getAdmissionYear();
 		allStudents.add(this);
 		
+		
 			
 	}
 	
@@ -83,10 +84,15 @@ public class Student {
 		
 	}
 
+	
 //	public void setCurrentYear(int currentYear) {
 //		this.currentYear = currentYear;
 //		this.profile.setCurrentYear(currentYear);
 //	}
+
+	public Account getAccount() {
+		return account;
+	}
 
 	public static void showAllStudents() {
 		ArrayList<Student> slist=allStudents;

@@ -31,11 +31,11 @@ public class Account {
 		this.userName = userName;		
 		usernameStudentsMap.put(userName, student);
 	}
-	String getUserName() {
+	public String getUserName() {
 		return userName;
 	}
 
-	String getPassWord() {
+	public String getPassWord() {
 		return passWord;
 	}
 
