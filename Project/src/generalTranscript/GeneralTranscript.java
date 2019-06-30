@@ -32,13 +32,22 @@ public class GeneralTranscript {
 	}
 	public float calculateGPA() {
 		float sumOfGrades=0;
-		Iterator<Course> it=this.courseList.iterator();
+		float sumOfCredits=0;
+		float gpa=0;
+		Iterator<Course> it=this.coursesGradeMap.keySet().iterator();
 		while(it.hasNext()) {
 			Course course=it.next();
-			sumOfGrades=sumOfGrades+this.coursesGradeMap.get(course);
+			float grade=this.coursesGradeMap.get(course);
+			sumOfGrades=sumOfGrades+(course.getCourseUnit()*grade);
+			sumOfCredits=sumOfCredits+course.getCourseUnit();
 		}
-		
-		return (float) 10.00;
+		if(sumOfGrades==0) {
+			gpa=0;
+		}
+		else {
+			gpa=sumOfGrades/sumOfCredits;
+		}
+		return gpa;
 	}
 
 //	public  void semesterTranscriptUpdater(Course courseName, Student student) {
