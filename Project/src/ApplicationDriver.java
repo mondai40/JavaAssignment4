@@ -13,6 +13,7 @@ public class ApplicationDriver {
 	
 	
 	public static void loginView() {
+		Student logingStudent = null;
 		boolean passLoginView=false;
 		while(passLoginView==false) {
 			System.out.println("***************************************************************");
@@ -32,7 +33,7 @@ public class ApplicationDriver {
 			String password=s.nextLine();
 			//Create hashMap just to see the available methods
 			HashMap<String,Student> accountsAndPasswords=Account.getUsernameStudentsMap();
-			Student logingStudent=accountsAndPasswords.get(username);
+			logingStudent=accountsAndPasswords.get(username);
 			if (accountsAndPasswords.containsKey(username)&&logingStudent.getAccount().getPassWord()==password) {
 				passLoginView=true;
 			}
@@ -44,11 +45,11 @@ public class ApplicationDriver {
 		System.out.println("***************************************************************");
 		System.out.println("Welcome to Cornestone International College of Canada");
 		System.out.println("***************************************************************");
-		tenOptionsView();
+		tenOptionsView(logingStudent);
 		
 		//}
 	}
-	public static void tenOptionsView() {
+	public static void tenOptionsView(Student student) {
 		Scanner s = new Scanner(System.in);
 		boolean flag = false;
 		while (!(flag)) {
@@ -71,20 +72,36 @@ public class ApplicationDriver {
 			switch(chosenNumber) {
 				case 1:
 					//call printEnrollmentCertificate()
+					student.printEnrollmentCertificate();
+					break;
 				case 2:
 					//call printMyCourses()
+					student.printMyCourses();
+					break;
 				case 3:
 					//call printGeneralTranscript()
+					student.printGeneralTranscript();
+					break;
 				case 4:
 					//call printGPA()
+					student.printGPA();
+					break;
 				case 5:
 					//call printMyRanking()
+					student.printMyRanking();
+					break;
 				case 6:
 					//call printAvailableCourses()
+					student.printAvailableCourses();
+					break;
 				case 7:
 					//call printAllStrudens()
+					student.printAllStrudens();
+					break;
 				case 8:
 					//call printMyProfile()
+					student.printMyProfile();
+					break;
 				case 9:
 					flag = true;
 					break;
