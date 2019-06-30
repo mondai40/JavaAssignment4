@@ -11,14 +11,14 @@ public class Course {
 	private int numberOfSemester;
 	public static ArrayList<Course> allCourses = new ArrayList<Course>();
 	
-	public Course(String name, String code, int numberOfUnits, Course Course) {
+	public Course(String name, String code, int numberOfUnits) {
 		super();
 		this.name = name;
 		this.code = code;
 		this.numberOfUnits = numberOfUnits;
 		this.studentGrade = 0;
 		this.numberOfSemester = -1;
-		this.allCourses.add(Course);
+		allCourses.add(this);
 	}
 	
 	public String getCourseName() {

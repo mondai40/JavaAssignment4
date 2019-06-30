@@ -3,28 +3,34 @@ import generalTranscript.*;
 import semesterTranscript.*;
 import profile.*;
 import course.*;
-
+import account.Account;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
 
+
+
 public class Student {
-	private static ArrayList<Student> allStudents;
+	public static ArrayList<Student> allStudents;
 	int admissionYear;
 	int currentYear;
 	GeneralTranscript generalTranscript;
 	SemesterTranscript semesterTranscript;
 	Profile profile;
+	Account account;
 	
 	public Student() {
 		super();
 		this.generalTranscript=new GeneralTranscript();
 		this.profile=new Profile();
+		this.account=new Account(this);
 		this.semesterTranscript=new SemesterTranscript();
 		this.currentYear=this.profile.getCurrentYear();
 		this.admissionYear=this.profile.getAdmissionYear();
+		allStudents.add(this);
+		
 			
 	}
 	

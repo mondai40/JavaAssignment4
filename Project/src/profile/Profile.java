@@ -31,15 +31,19 @@ public class Profile {
 		this.country=s.nextLine();
 		System.out.println("Please Enter Your year of admission");
 		this.admissionYear=s.nextInt();
-		System.out.println("Please Enter Your year of age");
+		System.out.println("Please Enter Your  age");
 		this.age=s.nextInt();
-		this.currentYear=-1;
+		this.currentYear=2019;
 		this.gpa=(float)-1.0;
 		this.currentSemesterGPA=(float)-1.0;
 		this.studentId="-1";
 		
 	
 		
+	}
+	public Profile(String name) {
+		super();
+		this.name=name;
 	}
 
 
@@ -130,6 +134,62 @@ public class Profile {
 
 	public String getAddress() {
 		return address;
+	}
+
+
+
+
+
+	public void setAdmissionYear(int admissionYear) {
+		this.admissionYear = admissionYear;
+	}
+
+
+
+
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+
+
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+
+
+
+
+	public void setGender(char gender) {
+		this.gender = gender;
 	}
 
 

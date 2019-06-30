@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Account {
 	private String userName;
 	private String passWord;
-	public static HashMap<String, Student> accountsAndPasswords = new HashMap<String, Student>();
+	public static HashMap<String, Student> usernameStudentsMap = new HashMap<String, Student>();
 	//static HashMap<Student,HashMap<String,String>> studentAccountPasswordMap;
 	
 	public Account(Student student) {
@@ -19,7 +19,7 @@ public class Account {
 		System.out.println("Please enter your password");
 		String passWord=s.nextLine();
 		this.passWord = passWord;
-		accountsAndPasswords.put(userName, student);
+		usernameStudentsMap.put(userName, student);
 //		HashMap<String,String> accountPasswordPair=new HashMap<String,String>();
 //		accountPasswordPair.put(userName, passWord);
 		//studentAccountPasswordMap.put(student, accountPasswordPair);
@@ -33,6 +33,10 @@ public class Account {
 
 	String getPassWord() {
 		return passWord;
+	}
+
+	public static HashMap<String, Student> getUsernameStudentsMap() {
+		return usernameStudentsMap;
 	}
 	
 	
