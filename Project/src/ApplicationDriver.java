@@ -1,3 +1,12 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+import account.Account;
+import student.Student;
+//import studentObjectsCreator.*;
+
+
+public class ApplicationDriver {
 
 	public static void main(String[] args) {
 		loginView();
@@ -37,7 +46,6 @@
 				else {
 					System.out.println("Username of password are wrong.Please try againg");
 				}
-=======
 			if(username.contentEquals("register")) {
 				//String studentObjName=StudentObjectsCreator.createName();
 				//Student StudentObjectsCreator.createName()=new Student();
@@ -55,7 +63,6 @@
 			else {
 				System.out.println("Username of password are wrong.Please try againg");
 			}
->>>>>>> 64be1476f23ae2b114468338960ccb2cbee068d4
 			}
 		}
 		System.out.println("***************************************************************");
