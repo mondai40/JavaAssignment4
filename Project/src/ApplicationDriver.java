@@ -40,7 +40,14 @@ public class ApplicationDriver {
 					//Create hashMap just to see the available methods
 					HashMap<String,Student> accountsAndPasswords=Account.getUsernameStudentsMap();
 					logingStudent=accountsAndPasswords.get(username);
-					if (accountsAndPasswords.containsKey(username)&&logingStudent.getAccount().getPassWord()==password) {
+//					//boolean test start
+//					System.out.println("username in map: "+accountsAndPasswords.containsKey(username));
+//					System.out.println(password.contentEquals(logingStudent.getAccount().getPassWord()));
+//					//boolean test end*******
+					boolean b2=accountsAndPasswords.containsKey(username);
+					boolean b3=password.contentEquals(logingStudent.getAccount().getPassWord());
+					
+					if (b2 && b3) {
 						passLoginView=true;
 					}
 					else {
