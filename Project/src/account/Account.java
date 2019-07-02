@@ -13,7 +13,7 @@ public class Account {
 	public Account(Student student) {
 		super();
 		Scanner s=new Scanner(System.in);
-		System.out.println("Please username");
+		System.out.println("Please enter username");
 		String userName=s.nextLine();
 		this.userName = userName;
 		System.out.println("Please enter your password");

@@ -13,13 +13,14 @@ import java.util.Iterator;
 
 
 public class Student {
-	public static ArrayList<Student> allStudents;
+	public static ArrayList<Student> allStudents=new ArrayList<Student>();
 	int admissionYear;
 	int currentYear;
 	GeneralTranscript generalTranscript;
 	SemesterTranscript semesterTranscript;
 	Profile profile;
 	Account account;
+	Student objectName;
 	
 	public Student() {
 		super();
@@ -29,7 +30,9 @@ public class Student {
 		this.semesterTranscript=new SemesterTranscript();
 		this.currentYear=this.profile.getCurrentYear();
 		this.admissionYear=this.profile.getAdmissionYear();
+		this.objectName=this;
 		allStudents.add(this);
+//		System.out.println(this);
 		
 		
 			
