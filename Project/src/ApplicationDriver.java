@@ -25,45 +25,29 @@ public class ApplicationDriver {
 			System.out.println("Username:");
 			String username=s.nextLine();
 
-		String register="register";
-			boolean b1=username.equalsIgnoreCase(register);
-			System.out.println("username is register: "+b1);
-			if(b1) {
+			String register="register";
+				boolean b1=username.equalsIgnoreCase(register);
+				System.out.println("username is register: "+b1);
+				if(b1) {
 				//String studentObjName=StudentObjectsCreator.createName();
 				//Student StudentObjectsCreator.createName()=new Student();
 				System.out.println("follow the instructions to register.");
 				new Student();
-			}
-			else {
-				System.out.println("Password:");
-				String password=s.nextLine();
-				//Create hashMap just to see the available methods
-				HashMap<String,Student> accountsAndPasswords=Account.getUsernameStudentsMap();
-				Student logingStudent=accountsAndPasswords.get(username);
-				if (accountsAndPasswords.containsKey(username)&&logingStudent.getAccount().getPassWord()==password) {
-					passLoginView=true;
 				}
 				else {
-					System.out.println("Username of password are wrong.Please try againg");
+					System.out.println("Password:");
+					String password=s.nextLine();
+					//Create hashMap just to see the available methods
+					HashMap<String,Student> accountsAndPasswords=Account.getUsernameStudentsMap();
+					logingStudent=accountsAndPasswords.get(username);
+					if (accountsAndPasswords.containsKey(username)&&logingStudent.getAccount().getPassWord()==password) {
+						passLoginView=true;
+					}
+					else {
+						System.out.println("Username of password are wrong.Please try againg");
+				
+					}
 				}
-			if(username.contentEquals("register")) {
-				//String studentObjName=StudentObjectsCreator.createName();
-				//Student StudentObjectsCreator.createName()=new Student();
-				new Student();
-			}
-			else {
-			System.out.println("Password:");
-			String password=s.nextLine();
-			//Create hashMap just to see the available methods
-			HashMap<String,Student> accountsAndPasswords=Account.getUsernameStudentsMap();
-			logingStudent=accountsAndPasswords.get(username);
-			if (accountsAndPasswords.containsKey(username)&&logingStudent.getAccount().getPassWord()==password) {
-				passLoginView=true;
-			}
-			else {
-				System.out.println("Username of password are wrong.Please try againg");
-			}
-			}
 		}
 		System.out.println("***************************************************************");
 		System.out.println("Welcome to Cornestone International College of Canada");
