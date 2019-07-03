@@ -244,7 +244,13 @@ public class Student {
 			String courseName = course.getCourseName();
 			String courseCode = course.getCourseCode();
 			int courseUnit = course.getCourseUnit();
-			int numberOfSemester = courseInTakeSemester.get(course);
+			int numberOfSemester=0;
+			if(courseInTakeSemester.get(course)==null) {
+				numberOfSemester=0;
+			}
+			else {
+			numberOfSemester = courseInTakeSemester.get(course);
+			}
 			String annotation=" ";
 			if (numberOfSemester == 0) {
 				annotation = "[Not taken]";

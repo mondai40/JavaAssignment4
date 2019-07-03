@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import account.Account;
 import student.Student;
+import course.*;
 //import studentObjectsCreator.*;
 
 
@@ -64,6 +65,11 @@ public class ApplicationDriver {
 		//}
 	}
 	public static void tenOptionsView(Student student) {
+		boolean coursesSimulationCreated=false;
+		if(coursesSimulationCreated==false) {
+			Course.coursesSimulations();
+			coursesSimulationCreated=true;
+		}
 		Scanner s = new Scanner(System.in);
 		boolean flag = false;
 		while (!(flag)) {
