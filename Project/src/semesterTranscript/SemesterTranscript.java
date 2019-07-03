@@ -2,6 +2,7 @@ package semesterTranscript;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import course.Course;
 import generalTranscript.*;
@@ -10,12 +11,12 @@ import generalTranscript.*;
 
 public class SemesterTranscript extends GeneralTranscript {
 	ArrayList<Course> courseList;
-	HashMap<Course,Float> courseGradeMap;
+	HashMap<Course,Float> coursesGradeMap;
 	
 	public SemesterTranscript() {
 		super();
 		this.courseList=new ArrayList<Course>();
-		this.courseGradeMap=new HashMap<Course,Float>();
+		this.coursesGradeMap=new HashMap<Course,Float>();
 	}
 
 	@Override
@@ -23,8 +24,10 @@ public class SemesterTranscript extends GeneralTranscript {
 		// TODO Auto-generated method stub
 		//super.inputCourseInfo(course, courseGrade, courseIntakeSemester);
 		this.courseList.add(course);
-		this.courseGradeMap.put(course, courseGrade);
+		this.coursesGradeMap.put(course, courseGrade);
 	}
+
+	
 	
 	
 	

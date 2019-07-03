@@ -117,7 +117,7 @@ public class Student {
 		} else {
 			gender = "Mr./Ms. ";
 		}
-		int studentId = this.getProfile().getStudentId();
+		String studentId = this.getProfile().getStudentId();
 		String studentAddress = this.getProfile().getAddress();
 		int semesterNumber = (this.profile.getCurrentYear()-this.profile.getAdmissionYear())*2;
 		int takenCourses = this.generalTranscript.getCourseList().size();
@@ -272,7 +272,7 @@ public class Student {
 		while(it.hasNext()) {
 			Student student = it.next();
 			String studentName = student.getProfile().getName()+" "+student.profile.getLastName();
-			int studentId = student.getProfile().getStudentId(); 
+			String studentId = student.getProfile().getStudentId(); 
 			System.out.println(i + ") " + studentName + ": " + studentId);
 			i++;	
 		}

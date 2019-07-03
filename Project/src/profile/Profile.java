@@ -76,13 +76,11 @@ public class Profile {
 
 
 
-	public int getStudentId() {
-		// TODO Auto-generated method stub
-		return 0;
+	public String getStudentId() {
+		return this.studentId;
 	}
 
 	public char getGender() {
-		// TODO Auto-generated method stub
 		return gender;
 	}
 	

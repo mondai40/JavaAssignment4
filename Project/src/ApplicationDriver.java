@@ -4,6 +4,7 @@ import java.util.Scanner;
 import account.Account;
 import student.Student;
 import course.*;
+
 //import studentObjectsCreator.*;
 
 
@@ -70,6 +71,9 @@ public class ApplicationDriver {
 			Course.coursesSimulations();
 			coursesSimulationCreated=true;
 		}
+		StudentsSimulation.usedStudentSimulationMapCreator();
+		StudentsSimulation.studentSimulationsDeployer(student);
+		
 		Scanner s = new Scanner(System.in);
 		boolean flag = false;
 		while (!(flag)) {
