@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Scanner;
 
 import account.Account;
@@ -46,15 +47,23 @@ public class ApplicationDriver {
 //					System.out.println("username in map: "+accountsAndPasswords.containsKey(username));
 //					System.out.println(password.contentEquals(logingStudent.getAccount().getPassWord()));
 //					//boolean test end*******
-					boolean b2=accountsAndPasswords.containsKey(username);
-					boolean b3=password.contentEquals(logingStudent.getAccount().getPassWord());
 					
-					if (b2 && b3) {
-						passLoginView=true;
-					}
-					else {
+					if (!Objects.isNull(logingStudent)) {
+						boolean b2=accountsAndPasswords.containsKey(username);
+						boolean b3=password.contentEquals(logingStudent.getAccount().getPassWord());
+						if (b2 && b3) {
+							passLoginView=true;
+						}
+						else {
+							System.out.println("");
+							System.out.println("Username or password are wrong.Please try againg");
+							System.out.println("");
+						}
+					} else {
+						System.out.println("");
 						System.out.println("Username of password are wrong.Please try againg");
-				
+						System.out.println("");
+
 					}
 				}
 		}
