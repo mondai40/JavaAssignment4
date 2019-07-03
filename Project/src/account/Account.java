@@ -13,12 +13,33 @@ public class Account {
 	public Account(Student student) {
 		super();
 		Scanner s=new Scanner(System.in);
-		System.out.println("Please enter username");
-		String userName=s.nextLine();
-		this.userName = userName;
-		System.out.println("Please enter your password");
-		String passWord=s.nextLine();
-		this.passWord = passWord;
+		boolean userNameFlag = false;
+		int userNameLeastNum = 6;
+		while (!(userNameFlag)) {
+			System.out.println("Please enter username");
+			String userName=s.nextLine();
+			if (userName.length() >= userNameLeastNum) {
+				userNameFlag = true;
+				this.userName = userName;
+			} else {
+				System.out.println("The username must be at least 6 characters long.");
+			}
+		}
+		boolean passwordFlag = false;
+		int userPasswordNum = 6;
+		while (!(passwordFlag)) {
+			System.out.println("Please enter your password");
+			String passWord=s.nextLine();			
+			if (passWord.length() >= userPasswordNum && passWord.matches(".*[0-9].*")) {
+				passwordFlag = true;
+				this.passWord = passWord;
+			} else {
+				System.out.println("The password must be at least 6 characters and at least one digit character in it.");
+			}
+		}
+		
+		
+		
 		usernameStudentsMap.put(userName, student);
 //		HashMap<String,String> accountPasswordPair=new HashMap<String,String>();
 //		accountPasswordPair.put(userName, passWord);
