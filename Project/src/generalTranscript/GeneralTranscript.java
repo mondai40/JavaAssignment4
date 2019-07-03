@@ -72,7 +72,14 @@ public class GeneralTranscript {
 
 	public String getMyGPARanking(Student student) {
 		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Float> studentsGPA=new ArrayList<Float>();
+		Iterator<Student> it=allStudentsGpaMap.keySet().iterator();
+		while(it.hasNext()) {
+			Student sstudent=it.next();
+			Float ssGPA=allStudentsGpaMap.get(sstudent);
+			studentsGPA.add(ssGPA);
+		}
+		
 	}
 	
 	public static void updateAllStudentsGPAMap(Student student, Float gpa) {
