@@ -10,7 +10,7 @@ public class Course {
 	private int studentGrade;
 	private int numberOfSemester;
 	public static ArrayList<Course> allCourses = new ArrayList<Course>();
-	
+
 	public Course(String name, String code, int numberOfUnits) {
 		super();
 		this.name = name;
@@ -20,7 +20,19 @@ public class Course {
 		this.numberOfSemester = -1;
 		allCourses.add(this);
 	}
+	public Course() {
+		//This is for first registration
+	}
 	
+	public static Course c1 = new Course("Objective-C", "MADP101", 3);
+	public static Course c2 = new Course("Object-Oriented Programming", "MADP102", 2);
+	public static Course c3 = new Course("Problem Solving", "MADP201", 1);
+	public static Course c4 = new Course("Project Management", "MADP202", 3);
+	public static Course c5 = new Course("Java Programming", "MADP301", 3);
+	public static Course c6 = new Course("Web Development:", "MADP302", 2);
+	public static Course c7 = new Course("Android Programming", "MADP401", 2);
+	public static Course c8 = new Course("iOS Applications", "MADP402", 3);
+
 	public String getCourseName() {
 		return this.name;
 	}
