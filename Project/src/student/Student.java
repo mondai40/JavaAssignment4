@@ -8,6 +8,7 @@ import account.Account;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Scanner;
 
 
 
@@ -300,7 +301,7 @@ public class Student {
 			
 			System.out.print(courseCode + ": " + courseName + annotation + comma);
 		}
-		
+
 	}
 	
 	public void registerCourseInfo(Course course, float grade, int courseIntakeSemester) {

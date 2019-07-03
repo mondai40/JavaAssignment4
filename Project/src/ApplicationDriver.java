@@ -86,35 +86,35 @@ public class ApplicationDriver {
 			switch(chosenNumber) {
 				case 1:
 					//call printEnrollmentCertificate()
-					student.printEnrollmentCertificate();
+					switchcase1(student);
 					break;
 				case 2:
 					//call printMyCourses()
-					student.printMyCourses();
+					switchcase2(student);
 					break;
 				case 3:
 					//call printGeneralTranscript()
-					student.printGeneralTranscript();
+					switchcase3(student);
 					break;
 				case 4:
 					//call printGPA()
-					student.printGPA();
+					switchcase4(student);
 					break;
 				case 5:
 					//call printMyRanking()
-					student.printMyRanking();
+					switchcase5(student);
 					break;
 				case 6:
 					//call printAvailableCourses()
-					student.printAvailableCourses();
+					switchcase6(student);
 					break;
 				case 7:
 					//call printAllStrudens()
-					student.printAllStrudens();
+					switchcase7(student);
 					break;
 				case 8:
 					//call printMyProfile()
-					student.printMyProfile();
+					switchcase8(student);
 					break;
 				case 9:
 					flag = true;
@@ -125,6 +125,78 @@ public class ApplicationDriver {
 			}
 		}
 		loginView();
+	}
+	public static void switchcase1(Student student) {
+		System.out.println("===========================================");
+		student.printEnrollmentCertificate();
+		Scanner s=new Scanner(System.in);
+		System.out.println();
+		System.out.println("===========================================");
+		System.out.println("Plz Press any key to return");
+		String case8=s.nextLine();
+	}
+	public static void switchcase2(Student student) {
+		System.out.println("===========================================");
+		student.printMyCourses();
+		Scanner s=new Scanner(System.in);
+		System.out.println();
+		System.out.println("===========================================");
+		System.out.println("Plz Press any key to return");
+		String case8=s.nextLine();
+	}
+	public static void switchcase3(Student student) {
+		System.out.println("===========================================");
+		student.printGeneralTranscript();
+		Scanner s=new Scanner(System.in);
+		System.out.println();
+		System.out.println("===========================================");
+		System.out.println("Plz Press any key to return");
+		String case8=s.nextLine();
+	}
+	public static void switchcase4(Student student) {
+		System.out.println("===========================================");
+		student.printGPA();
+		Scanner s=new Scanner(System.in);
+		System.out.println();
+		System.out.println("===========================================");
+		System.out.println("Plz Press any key to return");
+		String case8=s.nextLine();
+	}
+	public static void switchcase5(Student student) {
+		System.out.println("===========================================");
+		student.printMyRanking();
+		Scanner s=new Scanner(System.in);
+		System.out.println();
+		System.out.println("===========================================");
+		System.out.println("Plz Press any key to return");
+		String case8=s.nextLine();
+	}
+	public static void switchcase6(Student student) {
+		System.out.println("===========================================");
+		student.printAvailableCourses();
+		Scanner s=new Scanner(System.in);
+		System.out.println();
+		System.out.println("===========================================");
+		System.out.println("Plz Press any key to return");
+		String case8=s.nextLine();
+	}
+	public static void switchcase7(Student student) {
+		System.out.println("===========================================");
+		student.printAllStrudens();
+		Scanner s=new Scanner(System.in);
+		System.out.println();
+		System.out.println("===========================================");
+		System.out.println("Plz Press any key to return");
+		String case8=s.nextLine();
+	}
+	public static void switchcase8(Student student) {
+		System.out.println("===========================================");
+		student.printMyProfile();
+		Scanner s=new Scanner(System.in);
+		System.out.println();
+		System.out.println("===========================================");
+		System.out.println("Plz Press any key to return");
+		String case8=s.nextLine();
 	}
 }
 
