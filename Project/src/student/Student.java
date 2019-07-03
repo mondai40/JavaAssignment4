@@ -22,6 +22,7 @@ public class Student {
 	Profile profile;
 	Account account;
 	Student objectName;
+	boolean simulationMade;
 	
 	public Student() {
 		super();
@@ -32,6 +33,7 @@ public class Student {
 		this.currentYear=this.profile.getCurrentYear();
 		this.admissionYear=this.profile.getAdmissionYear();
 		this.objectName=this;
+		this.simulationMade=false;
 		allStudents.add(this);
 //		System.out.println(this);
 		
@@ -96,6 +98,15 @@ public class Student {
 
 	public Account getAccount() {
 		return account;
+	}
+	
+
+	public boolean isSimulationMade() {
+		return simulationMade;
+	}
+
+	public void setSimulationMade(boolean simulationMade) {
+		this.simulationMade = simulationMade;
 	}
 
 	public static void showAllStudents() {
@@ -228,7 +239,7 @@ public class Student {
 			gender = "Mr./Ms. ";
 	}
 		System.out.println("Hi "+gender+studentName+",");
-		System.out.println("Your overall GPA is"+this.profile.getGpa()+"and therefore your rank is "+this.generalTranscript.getMyGPARanking(this)+".");
+		System.out.println("Your overall GPA is "+this.profile.getGpa()+"and therefore your rank is "+this.generalTranscript.getMyGPARanking(this)+".");
 	}
 	
 	public void printAvailableCourses() {

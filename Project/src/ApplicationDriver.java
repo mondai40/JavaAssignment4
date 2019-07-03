@@ -29,7 +29,7 @@ public class ApplicationDriver {
 
 			String register="register";
 				boolean b1=username.equalsIgnoreCase(register);
-				System.out.println("username is register: "+b1);
+				//System.out.println("username is register: "+b1);
 				if(b1) {
 				//String studentObjName=StudentObjectsCreator.createName();
 				//Student StudentObjectsCreator.createName()=new Student();
@@ -66,14 +66,17 @@ public class ApplicationDriver {
 		//}
 	}
 	public static void tenOptionsView(Student student) {
-		boolean coursesSimulationCreated=false;
+		boolean coursesSimulationCreated=Course.isCoursesSimulationCreated();
 		if(coursesSimulationCreated==false) {
 			Course.coursesSimulations();
-			coursesSimulationCreated=true;
+			Course.setCoursesSimulationCreated(true);
 		}
 		StudentsSimulation.usedStudentSimulationMapCreator();
-		StudentsSimulation.studentSimulationsDeployer(student);
-		
+		boolean studentSimulationMade=student.isSimulationMade();
+		if(studentSimulationMade==false) {
+			StudentsSimulation.studentSimulationsDeployer(student);
+			student.setSimulationMade(true);		
+		}
 		Scanner s = new Scanner(System.in);
 		boolean flag = false;
 		while (!(flag)) {

@@ -10,6 +10,7 @@ public class Course {
 	private int studentGrade;
 	private int numberOfSemester;
 	public static ArrayList<Course> allCourses = new ArrayList<Course>();
+	public static boolean coursesSimulationCreated=false;
 
 	public Course(String name, String code, int numberOfUnits) {
 		super();
@@ -47,6 +48,12 @@ public class Course {
 
 	public int getCourseUnit() {
 		return this.numberOfUnits;
+	}
+	public static boolean isCoursesSimulationCreated() {
+		return coursesSimulationCreated;
+	}
+	public static void setCoursesSimulationCreated(boolean coursesSimulationCreated) {
+		Course.coursesSimulationCreated = coursesSimulationCreated;
 	}
 
 }

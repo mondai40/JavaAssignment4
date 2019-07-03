@@ -24,7 +24,7 @@ public class StudentsSimulation {
 		}
 		else if(deployCounter==3){
 			s3Simulation(student);
-			System.out.println("All simulation used");
+			//System.out.println("All simulation used");
 		}
 		
 	}
