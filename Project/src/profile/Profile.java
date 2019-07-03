@@ -29,12 +29,12 @@ public class Profile {
 		this.gender=s.nextLine().charAt(0);
 		System.out.println("Please Enter Your Country of origin");
 		this.country=s.nextLine();
+		System.out.println("Please Enter Your address");
+		this.address=s.nextLine();
 		System.out.println("Please Enter Your year of admission");
 		this.admissionYear=s.nextInt();
 		System.out.println("Please Enter Your  age");
 		this.age=s.nextInt();
-		System.out.println("Please Enter Your address");
-		this.address=s.next();
 		this.currentYear=2019;
 		this.gpa=(float)-1.0;
 		this.currentSemesterGPA=(float)-1.0;
