@@ -27,7 +27,26 @@ public class SemesterTranscript extends GeneralTranscript {
 		this.coursesGradeMap.put(course, courseGrade);
 	}
 
-	
+	@Override
+	public float calculateGPA() {
+		float sumOfGrades=0;
+		float sumOfCredits=0;
+		float gpa=0;
+		Iterator<Course> it=this.coursesGradeMap.keySet().iterator();
+		while(it.hasNext()) {
+			Course course=it.next();
+			float grade=this.coursesGradeMap.get(course);
+			sumOfGrades=sumOfGrades+(course.getCourseUnit()*grade);
+			sumOfCredits=sumOfCredits+course.getCourseUnit();
+		}
+		if(sumOfGrades==0) {
+			gpa=0;
+		}
+		else {
+			gpa=sumOfGrades/sumOfCredits;
+		}
+		return gpa;
+	}
 	
 	
 	
