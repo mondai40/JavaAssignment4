@@ -110,9 +110,9 @@ public class Student {
 		char genderSyn = this.getProfile().getGender();
 		String genderSynString = Character.toString(genderSyn);
 		String gender=" ";
-		if ( genderSynString == "M") {
+		if ( genderSynString.equals("M")) {
 			gender = "Mr. ";
-		} else if ( genderSynString == "F") {
+		} else if ( genderSynString.equals("F")) {
 			gender = "Ms. ";
 		} else {
 			gender = "Mr./Ms. ";
@@ -203,9 +203,9 @@ public class Student {
 		char genderSyn = this.getProfile().getGender();
 		String genderSynString = Character.toString(genderSyn);
 		String gender=" ";
-		if ( genderSynString == "M") {
+		if ( genderSynString.equals("M")) {
 			gender = "Mr. ";
-		} else if ( genderSynString == "F") {
+		} else if ( genderSynString.equals("F")) {
 			gender = "Ms. ";
 		} else {
 			gender = "Mr./Ms. ";
@@ -220,9 +220,9 @@ public class Student {
 		char genderSyn = this.getProfile().getGender();
 		String genderSynString = Character.toString(genderSyn);
 		String gender=" ";
-		if ( genderSynString == "M") {
+		if ( genderSynString.equals("M")) {
 			gender = "Mr. ";
-		} else if ( genderSynString == "F") {
+		} else if ( genderSynString.equals("F")) {
 			gender = "Ms. ";
 		} else {
 			gender = "Mr./Ms. ";
