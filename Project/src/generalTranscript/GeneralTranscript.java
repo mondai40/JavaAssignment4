@@ -1,6 +1,7 @@
 package generalTranscript;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -70,8 +71,7 @@ public class GeneralTranscript {
 		return this.coursesGradeMap;
 	}
 
-	public String getMyGPARanking(Student student) {
-		// TODO Auto-generated method stub
+	public int getMyGPARanking(Student student) {
 		ArrayList<Float> studentsGPA=new ArrayList<Float>();
 		Iterator<Student> it=allStudentsGpaMap.keySet().iterator();
 		while(it.hasNext()) {
@@ -79,7 +79,10 @@ public class GeneralTranscript {
 			Float ssGPA=allStudentsGpaMap.get(sstudent);
 			studentsGPA.add(ssGPA);
 		}
-		
+		Collections.sort(studentsGPA, Collections.reverseOrder());
+		Float gpaLookedFor=allStudentsGpaMap.get(student);
+		int ranking=studentsGPA.indexOf(gpaLookedFor)+1;
+		return ranking;
 	}
 	
 	public static void updateAllStudentsGPAMap(Student student, Float gpa) {
