@@ -320,6 +320,7 @@ public class Student {
 	private void gpaUpdater() {
 		float generalGPA=this.generalTranscript.calculateGPA();
 		this.profile.setGpa(generalGPA);
+		GeneralTranscript.updateAllStudentsGPAMap(this, generalGPA);
 		float currentSemesterGPA=this.semesterTranscript.calculateGPA();
 		this.profile.setCurrentSemesterGPA(currentSemesterGPA);
 		

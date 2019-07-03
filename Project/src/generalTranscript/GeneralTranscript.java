@@ -75,6 +75,9 @@ public class GeneralTranscript {
 		return null;
 	}
 	
+	public static void updateAllStudentsGPAMap(Student student, Float gpa) {
+		allStudentsGpaMap.put(student, gpa);
+	}
 
 	
 
